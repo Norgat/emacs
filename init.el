@@ -88,3 +88,11 @@
 
 (require 'yasnippet)
 (yas-global-mode 1)
+
+
+
+;; ===========================================================================
+;; Autocompletion configuration with company-mode: http://company-mode.github.io/
+
+(global-company-mode t)
+(global-set-key (kbd "<f1>") 'company-complete)
