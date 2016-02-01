@@ -46,7 +46,7 @@
 
 (defun ibuf/filter-by-read-only ()
   (interactive)
-  (ibuffer-filter-by-predicate '(ibuf/not-read-only)))
+  (ibuffer-filter-by-predicate '(not buffer-read-only)))
 
 ;; VC root grouping
 (add-hook
