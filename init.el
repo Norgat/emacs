@@ -13,7 +13,7 @@
 
 
 ;; ===========================================================================
-;; Common typing configuration
+;; Common typing and control configuration
 
 (ido-mode t)
 (setq tab-width 2)
@@ -21,6 +21,10 @@
 (global-hl-line-mode 0)
 (show-paren-mode t)
 (global-linum-mode t)
+
+(require 'ibuffer-vc)
+(require 'ibuffer-git)
+(ibuffer-vc-set-filter-groups-by-vc-root)
 
 
 
@@ -31,8 +35,8 @@
 (global-set-key (kbd "C-x <down>") 'windmove-down)
 (global-set-key (kbd "C-x <right>") 'windmove-right)
 (global-set-key (kbd "C-x <left>") 'windmove-left)
-;(global-set-key (kbd "<f12>") 'ibuffer)
-(global-set-key (kbd "<f12>") 'buffer-menu)
+(global-set-key (kbd "<f12>") 'ibuffer)
+;(global-set-key (kbd "<f12>") 'buffer-menu)
 
 ;; org-mode global keys
 (global-set-key "\C-cl" 'org-store-link)
