@@ -30,14 +30,13 @@
  'ibuffer-hook
  (lambda ()
    (ibuffer-vc-set-filter-groups-by-vc-root)
-   ibuffer-do-sort-by-alphabetic))
+   (ibuffer-do-sort-by-alphabetic)))
 
 ;; Modify the default ibuffer-formats
 (setq ibuffer-formats
       '((mark modified read-only " "
               (name 18 18 :left :elide)
               " "
-              ;; Readable size
               (size 9 -1 :right)
               " "
               (mode 16 16 :left :elide)
