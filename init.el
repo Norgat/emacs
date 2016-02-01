@@ -22,8 +22,14 @@
 (show-paren-mode t)
 (global-linum-mode t)
 
+
+;; ===========================================================================
+;; ibuffer config
+
 (require 'ibuffer-vc)
 (require 'ibuffer-git)
+
+(setq ibuffer-show-empty-filter-groups nil)
 
 ;; VC root grouping
 (add-hook
@@ -44,6 +50,9 @@
               (git-status 16 16 :left)
               " "
               filename-and-process)))
+
+(defun ibuf/not-read-only ()
+  (not buffer-read-only))
 
 
 ;; ===========================================================================
@@ -103,9 +112,12 @@
 
 ;; js2-mode used
 
+(require 'js2-mode)
+
 (add-hook 'js-mode-hook 'js2-minor-mode)
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 (setq js2-highlight-level 3)
 
 (define-key js-mode-map "{" 'paredit-open-curly)
 (define-key js-mode-map "}" 'paredit-close-curly-and-newline)
+
