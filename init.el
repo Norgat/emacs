@@ -31,13 +31,6 @@
 
 (setq ibuffer-show-empty-filter-groups nil)
 
-;; VC root grouping
-(add-hook
- 'ibuffer-hook
- (lambda ()
-   (ibuffer-vc-set-filter-groups-by-vc-root)
-   (ibuffer-do-sort-by-alphabetic)))
-
 ;; Modify the default ibuffer-formats
 (setq ibuffer-formats
       '((mark modified read-only " "
@@ -51,8 +44,17 @@
               " "
               filename-and-process)))
 
-(defun ibuf/not-read-only ()
-  (not buffer-read-only))
+(defun ibuf/filter-by-read-only ()
+  (interactive)
+  (ibuffer-filter-by-predicate '(ibuf/not-read-only)))
+
+;; VC root grouping
+(add-hook
+ 'ibuffer-hook
+ (lambda ()
+   (ibuffer-vc-set-filter-groups-by-vc-root)
+   (ibuffer-do-sort-by-alphabetic)
+   (local-set-key (kbd "<f5>") 'ibuf/filter-by-read-only)))
 
 
 ;; ===========================================================================
