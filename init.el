@@ -75,6 +75,10 @@
 
 (setq org-log-done t)
 
+;; Fix Google Chrome browse-url problem
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome")
+
 
 
 ;; ===========================================================================
