@@ -120,6 +120,7 @@
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 (setq js2-highlight-level 3)
 
+(require 'paredit)
 (define-key js-mode-map "{" 'paredit-open-curly)
 (define-key js-mode-map "}" 'paredit-close-curly-and-newline)
 
