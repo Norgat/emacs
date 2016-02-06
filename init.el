@@ -75,6 +75,9 @@
 
 (setq org-log-done t)
 
+(setq org-agenda-start-on-weekday 1)
+(setq calendar-week-start-day 1)
+
 ;; Fix Google Chrome browse-url problem
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome")
