@@ -176,6 +176,3 @@
 (define-key js-mode-map "{" 'paredit-open-curly)
 (define-key js-mode-map "}" 'paredit-close-curly-and-newline)
 
-
-;; ===========================================================================
-;; Activate russian layout
