@@ -83,6 +83,22 @@
       browse-url-generic-program "google-chrome")
 
 
+;; my org TODO keywords
+(setq org-todo-keywords
+      '((sequence "IDEA" "PROJECT" "|" "CLOSED" "DONE")
+	(sequence "REVIEW" "WORK")
+	(sequence "TODO" "|" "DONE")))
+
+(setq org-todo-keyword-faces
+      '(("TODO" . org-warning)
+	("IDEA" . "pink")
+	("PROJECT" . "yellow")
+	("CLOSED" . "red")
+	("REVIEW" . "sky blue")
+	("WORK" . "yellow")
+	("DONE" . org-done)))
+
+
 
 ;; ===========================================================================
 ;; Desktop save configuration
